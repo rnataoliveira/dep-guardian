@@ -7,8 +7,8 @@ import {
   fetchDependabotAlerts,
   fetchCodeQLAlerts,
   fetchSecretScanningAlerts,
-} from '@dep-guardian/core';
-import type { AlertSeverity } from '@dep-guardian/core';
+} from '@rntpkgs/dep-guardian-core';
+import type { AlertSeverity } from '@rntpkgs/dep-guardian-core';
 
 function bar(count: number, max: number, width = 20): string {
   const filled = max > 0 ? Math.round((count / max) * width) : 0;

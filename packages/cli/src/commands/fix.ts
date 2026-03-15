@@ -1,8 +1,8 @@
 import type { Command } from 'commander';
 import chalk from 'chalk';
 import ora from 'ora';
-import { run, buildConfig } from '@dep-guardian/core';
-import type { ProgressEvent, GuardianConfig } from '@dep-guardian/core';
+import { run, buildConfig } from '@rntpkgs/dep-guardian-core';
+import type { ProgressEvent, GuardianConfig } from '@rntpkgs/dep-guardian-core';
 
 function formatDuration(ms: number): string {
   if (ms < 1000) return `${ms}ms`;

@@ -1,21 +1,39 @@
 {
-  "name": "@dep-guardian/action",
+  "name": "@rntpkgs/dep-guardian-action",
   "version": "0.1.0",
   "description": "GitHub Action for dep-guardian",
   "type": "module",
   "main": "./dist/main.js",
+  "files": [
+    "dist",
+    "action.js",
+    "action.yml"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json && npm run bundle",
     "bundle": "node --input-type=module --eval \"import { build } from 'esbuild'; build({ entryPoints: ['dist/main.js'], bundle: true, platform: 'node', target: 'node20', outfile: 'action.js', format: 'esm' })\"",
     "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run build",
     "clean": "rm -rf dist action.js"
   },
   "dependencies": {
-    "@dep-guardian/core": "*",
+    "@rntpkgs/dep-guardian-core": "^0.1.0",
     "@actions/core": "^1.10.0",
     "@actions/github": "^6.0.0"
   },
   "devDependencies": {
     "esbuild": "^0.24.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnataoliveira/deb-guardian.git",
+    "directory": "packages/action"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

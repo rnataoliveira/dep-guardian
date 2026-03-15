@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
-import { run, buildConfig } from '@dep-guardian/core';
-import type { ProgressEvent, GuardianConfig, ValidationResult } from '@dep-guardian/core';
+import { run, buildConfig } from '@rntpkgs/dep-guardian-core';
+import type { ProgressEvent, GuardianConfig, ValidationResult } from '@rntpkgs/dep-guardian-core';
 
 function parseValidationSteps(input: string): GuardianConfig['validate'] {
   const valid = ['lint', 'typecheck', 'build', 'test'] as const;

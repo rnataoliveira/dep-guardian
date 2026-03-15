@@ -11,8 +11,8 @@ import {
   deduplicateAlerts,
   buildDepGraph,
   buildFixStrategies,
-} from '@dep-guardian/core';
-import type { RawAlert, GuardianConfig, DepGraph, AlertSeverity } from '@dep-guardian/core';
+} from '@rntpkgs/dep-guardian-core';
+import type { RawAlert, GuardianConfig, DepGraph, AlertSeverity } from '@rntpkgs/dep-guardian-core';
 
 const SEVERITY_COLOR: Record<AlertSeverity, (s: string) => string> = {
   critical: chalk.bgRed.white,

@@ -1,19 +1,24 @@
 {
-  "name": "@dep-guardian/cli",
+  "name": "@rntpkgs/dep-guardian",
   "version": "0.1.0",
-  "description": "CLI for dep-guardian",
+  "description": "Automated npm security fixer — fixes Dependabot, CodeQL, Secret Scanning vulnerabilities with real dependency updates",
   "type": "module",
   "bin": {
     "dep-guardian": "./dist/index.js",
     "dg": "./dist/index.js"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run build",
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@dep-guardian/core": "*",
+    "@rntpkgs/dep-guardian-core": "^0.1.0",
     "commander": "^12.0.0",
     "chalk": "^5.3.0",
     "ora": "^8.0.0",
@@ -21,5 +26,27 @@
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnataoliveira/deb-guardian.git",
+    "directory": "packages/cli"
+  },
+  "keywords": [
+    "security",
+    "dependabot",
+    "codeql",
+    "npm-audit",
+    "cli",
+    "dependency",
+    "vulnerability",
+    "fix"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
 }
