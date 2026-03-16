@@ -231,6 +231,6 @@ export function buildMajorBumpIssueTitle(strategy: FixStrategy): string {
 
 export function buildBranchName(): string {
   const now = new Date();
-  const ts = now.toISOString().replace(/[-:T]/g, '').slice(0, 15);
+  const ts = now.toISOString().replace(/[-:T.Z]/g, '').slice(0, 14);
   return `dep-guardian/${ts}`;
 }
